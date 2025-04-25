@@ -1,0 +1,220 @@
+/* General styles */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+    align-items: center;
+    max-width: 980px; /* Slightly adjust max-width for better spacing */
+    padding: 20px;
+    /* margin-top: -50px; /* Remove negative margin, rely on body flex centering */
+    gap: 70px; /* Add gap between left and right sides */
+}
+
+/* Left side (Logo and tagline) */
+.left-side {
+    flex: 1 1 500px; /* Allow shrinking but prefer 500px */
+    /* padding-right: 50px; /* Remove padding, use gap in container */
+    max-width: 500px; /* Limit width */
+    box-sizing: border-box;
+    padding-bottom: 20px; /* Add some padding at the bottom for spacing */
+}
+
+.left-side .logo {
+    height: 106px; /* Adjust as needed */
+    /* margin: -20px 0 0 -28px; /* Remove complex negative margins */
+    margin-left: -28px; /* Keep the left adjustment if needed */
+    margin-bottom: 10px; /* Add space below logo */
+}
+
+.left-side h2 {
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 32px;
+    color: #1c1e21;
+    margin-top: 0; /* Remove default margin */
+}
+
+/* Right side (Login form) */
+.right-side {
+    flex: 0 1 400px; /* Don't grow, allow shrinking, base width 400px */
+    max-width: 400px; /* Limit form width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements */
+    box-sizing: border-box;
+}
+
+.login-form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    padding: 20px;
+    width: 100%; /* Take full width of parent */
+    box-sizing: border-box;
+    text-align: center; /* Center inline elements like links */
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: calc(100% - 24px); /* Account for padding */
+    padding: 14px 12px;
+    margin-bottom: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 17px;
+    box-sizing: border-box;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #1877f2;
+    box-shadow: 0 0 0 2px #e7f3ff;
+}
+
+.login-button {
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 48px;
+    padding: 0 16px;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.login-button:hover {
+    background-color: #166fe5;
+}
+
+.forgot-password {
+    color: #1877f2;
+    font-size: 14px;
+    text-decoration: none;
+    display: block; /* Make it block to take full width for centering */
+    margin-bottom: 20px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-form hr {
+    border: none;
+    border-top: 1px solid #dadde1;
+    margin: 20px 0; /* Adjusted margin */
+}
+
+.create-account-button {
+    background-color: #42b72a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 48px;
+    padding: 0 16px;
+    cursor: pointer;
+    margin-top: 6px; /* Adjusted margin */
+}
+
+.create-account-button:hover {
+    background-color: #36a420;
+}
+
+.create-page {
+    margin-top: 28px;
+    padding-top: 10px; /* Add a little space above this text */
+    font-size: 14px;
+    color: #1c1e21;
+    text-align: center;
+}
+
+.create-page a {
+    color: #1c1e21;
+    text-decoration: none;
+}
+
+.create-page a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles (optional) */
+.page-footer {
+    /* Add styles if you include footer content */
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #737373;
+    margin-top: 50px; /* Space above footer */
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px; /* Adjust margin for smaller screens */
+        gap: 20px; /* Reduce gap for column layout */
+    }
+
+    .left-side {
+        flex-basis: auto; /* Reset flex basis */
+        padding-right: 0;
+        text-align: center; /* Center text on smaller screens */
+        margin-bottom: 20px; /* Add space below logo/tagline */
+        max-width: 400px; /* Match form width */
+    }
+
+    .left-side .logo {
+        margin: 0 auto 10px auto; /* Center logo and ensure bottom margin */
+    }
+
+    .left-side h2 {
+        font-size: 24px; /* Slightly smaller text */
+    }
+
+    .right-side {
+        flex-basis: auto; /* Reset flex basis */
+        width: 100%; /* Ensure form takes available width */
+        max-width: 400px; /* Keep max width */
+    }
+
+    .create-page {
+        padding-top: 0; /* Reset padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .left-side h2 {
+        font-size: 20px; /* Even smaller text */
+    }
+
+    .login-form {
+        box-shadow: none; /* Remove shadow on very small screens */
+        background-color: transparent; /* Make background transparent */
+        padding: 0; /* Remove padding */
+    }
+
+    body {
+        background-color: #fff; /* Change background to white like mobile */
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
